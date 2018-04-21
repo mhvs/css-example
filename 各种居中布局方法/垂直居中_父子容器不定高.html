@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中_父子容器不定宽</title>
+    <style>
+
+        .parent{background:#ddd;margin-right: 50px;margin-bottom:50px;width: 4em;height: 500px;
+            border: 1px solid #000;}
+        .child{background:#666;color:#fff;}
+
+        /* table单元格可用让里面的元素放在垂直居中位置
+         * table-cell 的margin会失效(被浏览器忽略)
+         */
+        .parent1{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .child1{
+
+        }
+
+        /*.parent2{
+
+        }
+        .child2{
+            !* table 默认宽度为内容宽度
+             * table 可用 margin 0 auto, 如果是 inline-block 则不能用 margin 0 auto
+             *!
+            display: table;
+            margin: auto 0;
+        }*/
+
+        .parent3{
+            position: relative;
+        }
+        .child3{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* 这里百分比参照物是元素自己 */
+        }
+
+        .parent4{
+            display: flex;
+            align-items: center;
+        }
+        .child4{
+
+        }
+
+        .parent5{
+            /* flex-item 可用 margin auto */
+            display: flex;
+        }
+        .child5{
+            margin: auto 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="parent parent1">
+    <div class="child child1">
+        DEMO1 table vertical-align
+    </div>
+</div>
+
+<!--<div class="parent parent2">
+    <div class="child child2">
+        DEMO2 table margin
+    </div>
+</div>-->
+
+<div class="parent parent3">
+    <div class="child child3">
+        DEMO3 relative absolute
+    </div>
+</div>
+
+<div class="parent parent4">
+    <div class="child child4">
+        DEMO4 flex justify-content
+    </div>
+</div>
+
+<div class="parent parent5">
+    <div class="child child5">
+        DEMO5 flex margin
+    </div>
+</div>
+
+</body>
+</html>
