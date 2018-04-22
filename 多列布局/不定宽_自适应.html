@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一列不定宽一列自适应</title>
+    <style>
+        .parent{background:#ddd;color:#fff;margin-bottom: 50px;}
+        .clearfix:after{content:'';clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
+        p{background:#666; margin: 0;font-size: 30px;}
+        .right p{background:#999;}
+
+        .parent1{
+
+        }
+        .left1{
+            float: left;
+            margin-right: 20px;
+        }
+        .right1{
+            overflow: hidden;
+        }
+
+        /* 有左边中文变成一竖的风险 */
+        .parent2{
+            display: table;
+            width: 100%;
+        }
+        .left2,.right2{
+            display: table-cell;
+        }
+        .left2{
+            width: 0.1%; /* 因为没有设置 table-layout fixed 所以现在尽管设的极小, 但是还是会保证内容的宽度 */
+            padding-right: 20px;
+        }
+
+        .parent3{
+            display: flex;
+        }
+        .left3{
+            margin-right: 20px;
+        }
+        .right3{
+            flex: 1; /* 1 1 0 */
+        }
+        .left3 p{
+            width: 100px;
+        }
+
+        .left4,.center4{
+            float: left;
+            margin-right: 20px;
+        }
+        .right{
+            overflow: hidden;
+        }
+        .left4 p,.center4 p{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="parent parent1">
+    <div class="left1">
+        <p>left 不定宽,保证宽度</p>
+    </div>
+    <div class="right right1">
+        <p>right 自适应</p>
+        <p>right float overflow</p>
+    </div>
+</div>
+
+<div class="parent parent2">
+    <div class="left2">
+        <p>left 不定宽,保证宽度</p>
+    </div>
+    <div class="right right2">
+        <p>right 自适应</p>
+        <p>right table</p>
+    </div>
+</div>
+
+<div class="parent parent3">
+    <div class="left3">
+        <p>left 不定宽,保证宽度</p>
+    </div>
+    <div class="right right3">
+        <p>right 自适应</p>
+        <p>right flex</p>
+    </div>
+</div>
+
+<div class="parent clearfix parent4">
+    <div class="left4">
+        <p>left 不定宽,保证宽度</p>
+    </div>
+    <div class="center4">
+        <p>left 不定宽,保证宽度</p>
+    </div>
+    <div class="right right4">
+        <p>right 自适应</p>
+        <p>right flex</p>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多列等宽</title>
+    <style>
+        .parent{background:#ddd;color:#fff;}
+        .clearfix:after{content:'';clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
+        p{background:#666; margin: 0;font-size: 30px;}
+
+        h2:not(:first-of-type){
+          margin-top: 100px;
+        }
+
+        .parent1{
+            /* 配合.column 的padding-left */
+            margin-left: -20px;
+        }
+        .column1{
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+            box-sizing: border-box; /* 使 padding-left 包含在 width 25% 里 */
+        }
+
+        .parent2-fix{
+            /* 让下面parent的参照物比原来大20px */
+            margin-left: -20px;
+        }
+        .parent2{
+            display: table;
+            width:100%;
+            table-layout: fixed;
+        }
+        .column2{
+            display: table-cell;
+            padding-left: 20px;
+        }
+
+        .parent3{
+            display: flex;
+        }
+        .column3{
+            flex: 1;
+        }
+        .column3+.column3{
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2> 知道几列 </h2>
+<div class="parent1">
+    <div class="column1"><p>1</p></div>
+    <div class="column1"><p>2</p></div>
+    <div class="column1"><p>3</p></div>
+    <div class="column1"><p>4</p></div>
+</div>
+
+<h2> 不知道几列 </h2>
+<div class="parent2-fix">
+    <div class="parent2">
+        <div class="column2"><p>1</p></div>
+        <div class="column2"><p>2</p></div>
+        <div class="column2"><p>3</p></div>
+        <div class="column2"><p>4</p></div>
+    </div>
+</div>
+
+<h2> 不知道几列 </h2>
+<div class="parent3">
+    <div class="column3"><p>1</p></div>
+    <div class="column3"><p>2</p></div>
+    <div class="column3"><p>3</p></div>
+    <div class="column3"><p>4</p></div>
+</div>
+
+</body>
+</html>

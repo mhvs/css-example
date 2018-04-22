@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一列定宽一列自适应</title>
+    <style>
+        .parent{background:#ddd;color:#fff; margin-bottom: 50px;}
+        .clearfix:after{content:'';clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
+        p{background:#666; margin: 0;font-size: 30px;}
+        .right p{background:#999;}
+
+        .parent1{
+
+        }
+        .left1{
+            /* 在 left 上设置 margin-right 只能把文字往右推 */
+            float: left;
+            width: 100px;
+        }
+        .right1{
+            /* left的 width + 想要的间距 */
+            margin-left: 120px;
+        }
+
+        .parent2{
+
+        }
+        .left2{
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .right2{
+            /* 如果要用 margin-left 间距的话 left的 width + 想要的间距 */
+            /* margin-left: 120px; */
+
+            /* BFC原理  */
+            overflow: hidden;
+        }
+
+        .parent3{
+            display: table;
+            /* 不设置宽度, 则table宽度由内容决定 */
+            width: 100%;
+            /* 布局优先而非内容宽度优先, 子单元格默认等宽 */
+            table-layout: fixed;
+        }
+        .left3,.right3{
+            display: table-cell;
+        }
+        .left3{
+            width: 100px;
+            /* td 单元格没办法设置margin */
+            padding-right: 20px;
+        }
+
+        .parent4{
+            display: flex;
+        }
+        .left4{
+            width: 100px;
+            margin-right: 20px;
+        }
+        .right4{
+            flex: 1; /* 1 1 0 */
+        }
+
+        .left5,.center5{
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .right5{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div class="parent parent1">
+    <div class="left1">
+        <p>left 定宽</p>
+    </div>
+    <div class="right right1">
+        <p>right 自适应</p>
+        <p>right float margin</p>
+    </div>
+</div>
+
+<div class="parent parent2">
+    <div class="left2">
+        <p>left 定宽</p>
+    </div>
+    <div class="right right2">
+        <p>right 自适应</p>
+        <p>right float overflow</p>
+    </div>
+</div>
+
+<div class="parent parent3">
+    <div class="left3">
+        <p>left 定宽</p>
+    </div>
+    <div class="right right3">
+        <p>right 自适应</p>
+        <p>right table</p>
+    </div>
+</div>
+
+<div class="parent parent4">
+    <div class="left4">
+        <p>left 定宽</p>
+    </div>
+    <div class="right right4">
+        <p>right 自适应</p>
+        <p>right flex</p>
+    </div>
+</div>
+
+<div class="parent parent5">
+    <div class="left5">
+        <p>left 定宽</p>
+    </div>
+    <div class="center5">
+        <p>center 定宽</p>
+    </div>
+    <div class="right right5">
+        <p>right 自适应</p>
+        <p>right float overflow</p>
+    </div>
+</div>
+
+
+</body>
+</html>
