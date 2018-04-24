@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>简单的轮播图</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 轮播图样式 -->
+    <link rel="stylesheet" href="css/slide.css">
+</head>
+<body>
+<div class="m-slide h-slide">
+    <div class="box animate">
+        <a class="poster" href="javascript:void(0)">
+            <img src="images/img1.jpg">
+        </a>
+        <a class="poster" href="javascript:void(0)">
+            <img src="images/img2.jpg">
+        </a>
+        <a class="poster" href="javascript:void(0)">
+            <img src="images/img3.jpg">
+        </a>
+        <a class="poster" href="javascript:void(0)">
+            <img src="images/img4.png">
+        </a>
+    </div>
+    <div class="indicator">
+        <a class="u-dot current" ></a>
+        <a class="u-dot"></a>
+        <a class="u-dot"></a>
+        <a class="u-dot"></a>
+    </div>
+</div>
+
+<script src="jquery-1.12.4.min.js"></script>
+<!-- 轮播图js, 无js则不能换页 -->
+<script src="javascript/slide.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+/*
+ * 给body设置一定高度免得看起来太挤
+ */
+body{
+    padding-top: 100px;
+}
+
+/* 清除浮动 没有用到 */
+/*.clearfix{
+    zoom:1;
+}
+.clearfix:after{
+    display:block;
+    content:"";
+    overflow:hidden;
+    clear:both;
+}*/
+
+/*
+ * 组件 小圆点
+ */
+.u-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background: #000;
+}
+.u-dot.current {
+    background: #fff;
+}
+/* ---- 组件 小圆点 end ---- */
+
+
+/*
+ * 模块 轮播图
+ */
+.m-slide {
+    position: relative; /* 用于定位指示器 */
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.m-slide .box {
+    /* 只给 poster 设置 height 100% 不起作用,
+     * 为避免 poster 塌陷,
+     * 父级直到有确定的 height 都要设置 height 100%
+     */
+    width: 100%;
+    height: 100%;
+}
+.m-slide .box.animate{
+    transition: 1s; /* 轮播图的动画效果 */
+}
+.m-slide .poster {
+    display: inline-block;
+    position: relative;
+    float: left; /* 解决inline-block右边微小的空隙 */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #6cf;
+}
+.m-slide .poster>img{
+    /*
+     * 使用绝对定使img中心点与poster中心点重合
+     */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+/* 指示器 */
+.m-slide .indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.m-slide .indicator>.u-dot {
+    margin-left: 5px;
+}
+/* ---- 模块 轮播图 end ---- */
+
