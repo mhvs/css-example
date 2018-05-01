@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Title</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="description">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <!-- 不高亮手机号和邮箱 -->
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;" name="viewport">
+    <style>
+        .m-flow{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.6);
+        }
+        .m-flow .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5.31rem;
+            height: 8.24rem;
+            -webkit-transform: translate(-50%,-50%);
+            background: -webkit-linear-gradient(#e8e8e8,#b0b0b0);
+        }
+
+        .u-close{
+            position: absolute;
+            top: -0.57rem;
+            right: 0;
+            width: 0.42rem;
+            height: 0.42rem;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            -webkit-transform-origin: 50% 50%;
+            -webkit-transform: rotate(45deg);
+        }
+        .u-close:after,.u-close:before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            width: 1px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .u-close:before{
+            -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            -webkit-transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="m-flow">
+    <div class="content">
+        <div class="title"></div>
+        <div class="selfinfo">
+            <div class="img">
+                <img src="thumb.jpg">
+                <p>name</p>
+            </div>
+            <div class="words">用的是</div>
+        </div>
+        <div class="phone"><img src="phone.png"></div>
+        <p>xxxxxx</p>
+        <p>xxxxxx</p>
+        <a href="javascript:;">长按保存至相册</a>
+        <img class="maskimg" src="URLHERE" > <!-- opacity:0; -->
+        <!-- 按钮用a标签更加语义化 -->
+        <a href="javascript:;" class="u-close"></a>
+    </div>
+</div>
+</body>
+</html>
