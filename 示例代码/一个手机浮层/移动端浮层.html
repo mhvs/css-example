@@ -12,27 +12,128 @@
     <meta name="screen-orientation" content="portrait">
     <meta name="x5-orientation" content="portrait">
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;" name="viewport">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/flow.css">
+    <style>
+        .m-flow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.6);
+        }
+        .m-flow .title {
+            margin: 0.5rem auto 0.15rem 0.45rem;
+            font-size: 0.3rem;
+            color: #47444c;
+        }
+        .m-flow .title .part1{
+            font-size: 0.6rem;
+            font-weight: bold;
+        }
+        .m-flow .title .part1 .number{
+            color: #cc3341;
+        }
+        .m-flow .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5.31rem;
+            height: 8.24rem;
+            transform: translate(-50%,-50%);
+            background: linear-gradient(#e8e8e8,#b0b0b0);
+        }
+        .m-flow .selfinfo {
+            display: flex;
+            margin-left: 0.45rem;
+            padding-left: 0.1rem;
+        }
+        .m-flow .selfinfo>div{
+
+        }
+        .m-flow .selfinfo img {
+            width: 0.53rem;
+            height: 0.53rem;
+        }
+        .m-flow .selfinfo .name {
+            font-size: 0.12rem;
+            color: #797979;
+        }
+        .m-flow .selfinfo .words {
+            margin-left: 0.15rem;
+            color: #47444c;
+            font-size: 0.36rem;
+            font-weight: bold;
+            line-height: 0.8rem;
+            text-decoration: underline;
+        }
+        .m-flow .phone {
+            text-align: center;
+        }
+        .m-flow .phone img {
+            width: 2.61rem;
+        }
+        .m-flow .shadow-line{
+            position: relative;
+            top: -0.09rem;
+            width: 3.45rem;
+            margin: 0 auto;
+            box-shadow: 0 0 0.2rem 0.05rem rgba(0,0,0,0.3);
+        }
+        .m-flow .slogan {
+            margin-top: 0.1rem;
+            font-size: 0.2054rem;
+            text-align: center;
+            color: #47444c;
+        }
+        .m-flow .save-area {
+            margin-top: 0.3rem;
+            text-align: center;
+        }
+        .m-flow .save {
+            width: 3.45rem;
+            font-size: 0.3rem;
+        }
+        .m-flow .maskimg{
+            position: absolute;
+            top: 7rem;
+            left: 0.5rem;
+            width: 4.5rem;
+            height: 1rem;
+            opacity: 0;
+        }
+        .m-flow .decoration-line{
+            position: absolute;
+            top: -0.15rem;
+            right: 0.21rem;
+            width: 1px;
+            height: 0.15rem;
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
 <div class="m-flow">
     <div class="content">
-        <div class="title"></div>
+        <div class="title">
+            <span class="part1"><span class="number">10</span>年前,</span>还没用iPhone
+        </div>
         <div class="selfinfo">
-            <div class="img">
+            <!-- 个人信息 -->
+            <div>
                 <img src="./img/thumb.png">
-                <p>name</p>
+                <p class="name">name</p>
             </div>
             <div class="words">用的是</div>
         </div>
+        <!-- 大的手机图片 -->
         <div class="phone"><img src="./img/nokia.png"></div>
-        <p>xxxxxx</p>
-        <p>xxxxxx</p>
-        <a href="javascript:;">长按保存至相册</a>
-        <img class="maskimg" src="URLHERE" > <!-- opacity:0; -->
-        <!-- 按钮用a标签更加语义化 -->
+        <!-- 手机图片的阴影 -->
+        <div class="shadow-line"></div>
+        <p class="slogan">xxxxxxxxx</p>
+        <p class="slogan">xxxxxxxxx</p>
+        <div class="save-area"><a class="u-button button-red save" href="javascript:;">长按保存至相册</a></div>
+        <!-- 用户下载的图片 -->
+        <img class="maskimg" src="https://yanxuan.nosdn.127.net/15205864289499088.png" > <!-- opacity:0; -->
+        <div class="decoration-line"></div>
         <a href="javascript:;" class="u-close"></a>
     </div>
 </div>
